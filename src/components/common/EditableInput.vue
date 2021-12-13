@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'editableInput',
   props: {
@@ -41,6 +42,7 @@ export default {
     }
   },
   methods: {
+
     update (e) {
       this.handleChange(e.target.value)
     },
@@ -94,7 +96,7 @@ export default {
 .vc-editable-input {
   position: relative;
 }
-.vc-input__input {
+.vc-editable-input .vc-input__input {
   padding: 0;
   border: 0;
   outline: none;

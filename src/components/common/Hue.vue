@@ -165,5 +165,6 @@ export default {
   border: 4px solid #FFFFFF;
   border-radius: 50%;
   transform: translate(-2px, -50%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 </style>
