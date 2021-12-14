@@ -373,14 +373,6 @@ export default {
   display: block;
   display: none;
 }
-
-.vc-iconscout-c__disable-alpha .vc-iconscout-c-active-color {
-  width: 18px;
-  height: 18px;
-}
-.vc-iconscout-c__disable-alpha .vc-iconscout-c-color-wrap {
-  width: 30px;
-}
 .vc-iconscout-c__disable-alpha .vc-iconscout-c-hue-wrap {
   margin-top: 4px;
   margin-bottom: 4px;
