@@ -166,7 +166,7 @@ export default {
       import(
         'copy-to-clipboard'
       ).then((r) => { 
-        r(self.colors.hex)
+        r.default(self.colors.hex)
       })
     },
     handlePreset (c) {
