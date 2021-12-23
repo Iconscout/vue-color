@@ -3,6 +3,19 @@
     <div class="vc-iconscout-c-saturation-wrap">
       <saturation v-model="colors" @change="childChange"></saturation>
     </div>
+    <div
+      v-if="defaultPalette.length"
+      class="vc-iconscout-c-defaults"
+    >
+      <button
+        v-for="(color, index) in defaultPalette"
+        :key="index"
+        :class="['vc-iconscout-c-button', (color === 'transparent' || color === 'white') ? `vc-iconscout-c-color-${color}` : '']"
+        :style="{ backgroundColor: color }"
+        @click="inputChange({ hex: color })"
+      >
+      </button>
+    </div>
     <div class="vc-iconscout-c-body">
       <div class="vc-iconscout-c-controls">
 
@@ -79,19 +92,6 @@
         <!-- active color preview -->
       </div>
     </div>
-    <div
-      v-if="defaultPalette.length"
-      class="vc-iconscout-c-defaults"
-    >
-      <button
-        v-for="(color, index) in defaultPalette"
-        :key="index"
-        :class="['vc-iconscout-c-button', (color === 'transparent' || color === 'white') ? `vc-iconscout-c-color-${color}` : '']"
-        :style="{ backgroundColor: color }"
-        @click="inputChange({ hex: color })"
-      >
-      </button>
-    </div>
   </div>
 </template>
 
@@ -166,7 +166,7 @@ export default {
       import(
         'copy-to-clipboard'
       ).then((r) => { 
-        r(self.colors.hex)
+        r.default(self.colors.hex)
       })
     },
     handlePreset (c) {
@@ -378,23 +378,18 @@ export default {
   margin-bottom: 4px;
 }
 .vc-iconscout-c-defaults {
-  border: 2px solid white;
   background-color: transparent;
   margin-top: 15px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  display: grid;
+  grid-template-columns: repeat(8, 20px);
+  grid-gap: 9px;
 }
 .vc-iconscout-c-button {
-  height: 22px;
-  width: 22px;
-  border: 1px solid transparent;
+  height: 20px;
+  width: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0;
   border-radius: 22px;
-  margin: 5px;
   outline: none !important;
   cursor: pointer;
 }
