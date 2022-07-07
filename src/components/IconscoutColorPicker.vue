@@ -163,11 +163,11 @@ export default {
   methods: {
     onCopy() {
       const self = this
-      self.$emit('copied')
       import(
         'copy-to-clipboard'
       ).then((r) => { 
         r.default(self.colors.hex)
+        self.$emit('copied')
       })
     },
     handlePreset (c) {
