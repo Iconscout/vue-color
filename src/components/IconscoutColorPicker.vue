@@ -167,6 +167,7 @@ export default {
         'copy-to-clipboard'
       ).then((r) => { 
         r.default(self.colors.hex)
+        self.$emit('copied')
       })
     },
     handlePreset (c) {
