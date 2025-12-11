@@ -18,6 +18,7 @@
             ? `vc-iconscout-c-color-${color}`
             : '',
         ]"
+        type="button"
         :style="{ backgroundColor: color }"
         @click="inputChange({ hex: color })"
       ></button>
